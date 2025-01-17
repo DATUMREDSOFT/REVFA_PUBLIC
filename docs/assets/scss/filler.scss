@@ -1,0 +1,169 @@
+// @import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
+
+$max-words: 10;
+$time-intervals: 10;
+$base-unit: 0.5s;
+
+.blank-line-list {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    transform: translateY(0px);
+}
+
+.blank-line-list > * {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    opacity: 0;
+    animation: default1 12s infinite;
+    font-style: italic;
+    pointer-events: none;
+}
+
+@for $time from 1 through $time-intervals {
+    @for $words from 1 through $max-words {
+        .blank-line-list.list-speed-#{$time}.num-words-#{$words} > * {
+            animation-duration: ($time * $base-unit * $words);
+        }
+        .blank-line-list.list-speed-#{$time}.num-words-#{$words} > *:nth-child(1) {
+            animation-delay: 0s;
+        }
+        @for $word from 1 through $words - 1 {
+            .blank-line-list.list-speed-#{$time}.num-words-#{$words} > *:nth-child(#{$word + 1}) {
+                animation-delay: $word * ($base-unit * $words * $time) / ($words);
+            }
+        }
+    }
+}
+
+.blank-line-list > *:nth-child(1) {
+    animation-delay: 0s;
+}
+.blank-line-list > *:nth-child(2) {
+    animation-delay: 3s;
+}
+.blank-line-list > *:nth-child(3) {
+    animation-delay: 6s;
+}
+.blank-line-list > *:nth-child(4) {
+    animation-delay: 9s;
+}
+
+@for $words from 1 through $max-words {
+
+    $start: 10% / $words;
+    $middle: 75% / $words;
+    $end: 90% / $words;
+
+    .blank-line-list.num-words-#{$words} > *,
+    .blank-line-list.num-words-#{$words}.slide-top > * {
+        animation-name: top#{$words};
+    }
+    .blank-line-list.num-words-#{$words}.slide-bottom > * {
+        animation-name: bottom#{$words};
+    }
+    .blank-line-list.num-words-#{$words}.slide-left > * {
+        animation-name: left#{$words};
+    }
+    .blank-line-list.num-words-#{$words}.slide-right > * {
+        animation-name: right#{$words};
+    }
+    .blank-line-list.num-words-#{$words}.slide-top-bottom > * {
+        animation-name: topbottom#{$words};
+    }
+    .blank-line-list.num-words-#{$words}.slide-bottom-top > * {
+        animation-name: bottomtop#{$words};
+    }
+    .blank-line-list.num-words-#{$words}.slide-left-right > * {
+        animation-name: leftright#{$words};
+    }
+    .blank-line-list.num-words-#{$words}.slide-right-left > * {
+        animation-name: rightleft#{$words};
+    }
+    @keyframes default#{$words} {
+        0%   {bottom: 3em; opacity: 0}
+        #{$start}  {bottom: 0; opacity: 1}
+        #{$middle}  {bottom: 0; opacity: 1}
+        #{$end}  {bottom: 0; opacity: 0}
+        100% {bottom: 3em; opacity: 0}
+    }
+
+    @keyframes top#{$words} {
+        0%   {bottom: 3em; opacity: 0}
+        #{$start}  {bottom: 0; opacity: 1}
+        #{$middle}  {bottom: 0; opacity: 1}
+        #{$end}  {bottom: 0; opacity: 0}
+        100% {bottom: 3em; opacity: 0}
+    }
+    @keyframes bottom#{$words} {
+        0%   {bottom: -3em; opacity: 0}
+        #{$start}  {bottom: 0; opacity: 1}
+        #{$middle}  {bottom: 0; opacity: 1}
+        #{$end}  {bottom: 0; opacity: 0}
+        100% {bottom: -3em; opacity: 0}
+    }
+    @keyframes left#{$words} {
+        0%   {left: -100%; opacity: 0}
+        #{$start}  {left: 0; opacity: 1}
+        #{$middle}  {left: 0; opacity: 1}
+        #{$end}  {left: 0; opacity: 0}
+        100% {left: -100%; opacity: 0}
+    }
+    @keyframes right#{$words} {
+        0%   {right: -100%; opacity: 0}
+        #{$start}  {right: 0; opacity: 1}
+        #{$middle}  {right: 0; opacity: 1}
+        #{$end}  {right: 0; opacity: 0}
+        100% {right: -100%; opacity: 0}
+    }
+
+    @keyframes topbottom#{$words} {
+        0%   {bottom: 3em; opacity: 0}
+        #{$start}  {bottom: 0; opacity: 1}
+        #{$middle}  {bottom: 0; opacity: 1}
+        #{$end}  {bottom: -3em; opacity: 0}
+        100% {bottom: -3em; opacity: 0}
+    }
+    @keyframes bottomtop#{$words} {
+        0%   {bottom: -3em; opacity: 0}
+        #{$start}  {bottom: 0; opacity: 1}
+        #{$middle}  {bottom: 0; opacity: 1}
+        #{$end}  {bottom: 3em; opacity: 0}
+        100% {bottom: 3em; opacity: 0}
+    }
+    @keyframes leftright#{$words} {
+        0%   {left: -100%; opacity: 0}
+        #{$start}  {left: 0; opacity: 1}
+        #{$middle}  {left: 0; opacity: 1}
+        #{$end}  {left: 100%; opacity: 0}
+        100% {left: 100%; opacity: 0}
+    }
+    @keyframes rightleft#{$words} {
+        0%   {right: -100%; opacity: 0}
+        #{$start}  {right: 0; opacity: 1}
+        #{$middle}  {right: 0; opacity: 1}
+        #{$end}  {right: 100%; opacity: 0}
+        100% {right: 100%; opacity: 0}
+    }
+}
+
+
+.blank-line-list:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    display: block;
+    bottom: -5px;
+    padding-top: 5px;
+    height: 0;
+    border-radius: 2.5px;
+    background-color: #fff;
+}
+.blank-line-list.underline-dark:after {
+    background-color: #363636;
+}
+.blank-line-list.underline-none:after {
+    display: none;
+}
