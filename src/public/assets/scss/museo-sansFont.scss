@@ -1,0 +1,76 @@
+/* Importa las fuentes desde la carpeta de fuentes */
+@font-face {
+    font-family: 'MuseoSans';
+    font-weight: 100;
+    font-style: normal;
+    src: url('../fonts/museo-sans/MuseoSans-100.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'MuseoSans';
+    font-weight: 100;
+    font-style: italic;
+    src: url('../fonts/museo-sans/MuseoSans-100Italic.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'MuseoSans';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../fonts/museo-sans/MuseoSans-300.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'MuseoSans';
+    font-weight: 300;
+    font-style: italic;
+    src: url('../fonts/museo-sans/MuseoSans-300Italic.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'MuseoSans';
+    font-weight: 500;
+    font-style: normal;
+    src: url('../fonts/museo-sans/MuseoSans_500.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'MuseoSans';
+    font-weight: 500;
+    font-style: italic;
+    src: url('../fonts/museo-sans/MuseoSans_500_Italic.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'MuseoSans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../fonts/museo-sans/MuseoSans_700.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'MuseoSans';
+    font-weight: 700;
+    font-style: italic;
+    src: url('../fonts/museo-sans/MuseoSans-700Italic.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'MuseoSans';
+    font-weight: 900;
+    font-style: normal;
+    src: url('../fonts/museo-sans/MuseoSans_900.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'MuseoSans';
+    font-weight: 900;
+    font-style: italic;
+    src: url('../fonts/museo-sans/MuseoSans-900Italic.otf') format('opentype');
+  }
+  
+  /* Aplica la fuente al cuerpo del documento */
+  body {
+    font-family: 'MuseoSans', sans-serif;
+  }
+  
