@@ -1,0 +1,72 @@
+.card-custom {
+    background-color: transparent;
+    border: 2px solid #050e5b;
+    border-radius: 10px;
+    height: 100%;
+  }
+  .card-custom:hover {
+    border-color: #2112c9;
+  }
+  .card-custom-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .card-custom-title {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    color: #050e5b;
+  }
+  .bi-custom {
+    color: #050e5b;
+    font-size: 2rem; /* Tamaño del icono */
+    margin-bottom: 0.5rem; /* Espacio debajo del icono */
+  }
+  .bi-custom:hover {
+    color: #2112c9;
+  }
+  .row-cols-2 > * {
+    flex: 1 0 50%;
+  }
+  .row-cols-md-3 > * {
+    flex: 1 0 33.33%;
+  }
+  .row-cols-lg-6 > * {
+    flex: 1 0 16.666%;
+  }
+  
+  @media (max-width: 768px) {
+    .card-custom-title {
+      font-size: 0.7rem; // Tamaño más pequeño para pantallas pequeñas
+    }
+  
+    .bi-custom {
+      font-size: 1.5rem; // Iconos más pequeños para pantallas pequeñas
+    }
+  }
+  
+  
+  
+  
+  
+  
+  .bi-custom-tamanio{
+    font-size: 2.5rem; /* Ajusta esto según necesites para hacer los iconos más grandes */
+  }
+  
+  .card-custom {
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+  
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+  
+  .selected {
+    border-color: #007bff !important; // Asegúrate de que el color de borde seleccionado destaque
+  }
+  

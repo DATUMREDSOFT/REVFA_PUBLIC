@@ -1,0 +1,242 @@
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <!-- Columna para el formulario de inicio de sesión -->
+    <div class="col-md-6">
+      <div class="text-center">
+        <img
+          src="../../../assets/logo/logo.png"
+          class="img-fluid rounded-top mt-4"
+          alt=""
+          style="height: 75px"
+        />
+      </div>
+
+      <form [formGroup]="myForm" class="theme-form login-form" style="max-width: 400px" >
+        <h4>Inicio de sesión</h4>
+        <h6>¡Bienvenido de nuevo! Inicia sesión en tu cuenta.</h6>
+        <div class="form-group">
+          <label>Usuario</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-person"></i></span>
+            <input
+              class="form-control"
+              [ngClass]="{'is-invalid': email?.invalid && email?.touched, 'is-valid': email?.valid && email?.touched}"
+              type="text"
+              id="email" 
+              name="email"
+              formControlName="email" 
+              placeholder="Usuario.RNPN"
+              formControlName="email"
+              (blur)="showValidation()"
+              (input)="onInput()"
+            />
+            <div *ngIf="email?.invalid && email?.touched" class="invalid-feedback">
+              <div *ngIf="email?.errors?.['required']">El usuario es obligatorio.</div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Contraseña</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="icon-lock"></i></span>
+            <input
+              type="{{ mostrarClave ? 'text' : 'password' }}"
+              class="form-control"
+              [ngClass]="{'is-invalid': clave?.invalid && clave?.touched, 'is-valid': clave?.valid && clave?.touched}"
+              id="clave"
+              name="clave"              
+              placeholder="Ingresa tu contraseña"
+              required
+              formControlName="clave"
+              (blur)="showValidationClave()"
+              (input)="onInputclave()"
+            />            
+            <button
+              class="btn btn-outline-primary"
+              type="button"
+              (click)="toggleMostrarContrasena()"
+            >
+              <i
+                class="{{ mostrarClave ? 'bi bi-eye-slash' : 'bi bi-eye' }}"
+              ></i>
+            </button>
+            <div *ngIf="clave?.invalid && clave?.touched" class="invalid-feedback">
+              <div *ngIf="clave?.errors?.['required']">la clave es obligatoria.</div>
+              
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="row">
+
+
+          <div class="col-md-6">
+            <div class="form-group text-primary">
+              <div class="checkbox ms-1">
+                <input id="checkbox1" type="checkbox" class="contenido" />
+                <label for="checkbox1" class="recordatorios">Recordar clave</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+           
+          </div>
+        </div>
+
+        
+
+       
+
+        
+
+
+
+        <div class="form-group">
+          <a class="btn btn-outline-primary me-2 pt-2" [routerLink]="['/inicio/principal']">
+            <i class="bi bi-box-arrow-in-right"></i> Acceder
+          </a>
+        </div>
+
+        <div class="form-group text-primary text-center">
+          <div class=" ms-1">           
+            <a [routerLink]="['/auth/recordar-clave']"   class="recordatorios">¿Olvidaste tu contraseña?</a>
+          </div>
+        </div>
+
+
+        <div class="login-social-title">
+          <h5>Contáctanos</h5>
+        </div>
+        <div class="form-group">
+          <ul class="login-social">
+            <li class="li-hover">
+              <a href="https://sv.linkedin.com/company/rnpn" target="_blank"
+                ><i class="bi bi-linkedin"></i></a>
+            </li>
+            <li class="li-hover">
+              <a href="https://twitter.com/rnpn_sv?lang=es" target="_blank"
+                ><i class="bi bi-twitter-x"></i></a>
+            </li>
+            <li class="li-hover">
+              <a
+                href="https://www.facebook.com/rnpn.sv/?locale=es_LA"
+                target="_blank"
+                ><i class="bi bi-facebook"></i></a>
+            </li>
+            <li class="li-hover">
+              <a href="https://www.instagram.com/rnpn.sv/?hl=es" target="_blank"
+                ><i class="bi bi-instagram"></i></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="form-group text-primary text-center">
+          <div class=" ms-1">           
+            <a [routerLink]="['/auth/registro']"  class="recordatorios">¿Aún no tienes cuenta?</a>
+          </div>
+        </div>
+
+
+      </form>
+
+      <div class="footer">
+        <div class="text-center">
+          <div class="container">
+            <div class="row">
+              <div class="text-center">
+                <img
+                  src="../../../assets/logos-gov/gobierno.png"
+                  alt="Logo 1"
+                  class="footer-logo altura-logo mx-3"
+                />
+
+                <img
+                  src="../../../assets/logos-gov/RNPNFooter.png"
+                  alt="Logo 2"
+                  class="footer-logo mx-3"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Columna para el carrusel -->
+    <div class="col-md-6 d-none d-md-block px-0">
+      <div 
+        id="carouselExampleSlidesOnly"
+        class="carousel slide carousel-fade rounded-start  h-100"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner h-100 shadow-lg" style="border-bottom-left-radius: 4rem">
+
+
+          <div class="carousel-item ">
+            <img
+              src="../../../assets/carrousel/11.png"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block bg-custom">
+              <h5 class="text-white">Compromiso con el servicio y la satisfacción.</h5>
+              <p class="text-white">Cada interacción es una oportunidad para generar un impacto positivo </p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+
+            <img
+            src="../../../assets/carrousel/2.png"
+            class="d-block w-100"
+            alt="..."
+          />
+
+            
+            <div class="carousel-caption d-none d-md-block bg-custom">
+              <h5 class="text-white">Energía positiva en acción</h5>
+              <p class="text-white">Creando conexiones genuinas y experiencias memorables. </p>
+           
+            </div>
+          </div>
+
+          
+
+          <div class="carousel-item active">
+            <img
+              src="../../../assets/carrousel/3.png"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block bg-custom">
+              <h5 class="text-white">Edificio emblemático RNPN</h5>
+              <p class="text-white">Enmarca el compromiso con la protección de datos y la ciudadanía salvadoreña. </p>
+             </div>
+          </div>
+
+          <!-- Agrega más elementos carousel-item según sea necesario -->
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleSlidesOnly"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleSlidesOnly"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

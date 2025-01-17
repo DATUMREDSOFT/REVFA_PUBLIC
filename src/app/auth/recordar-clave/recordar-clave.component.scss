@@ -1,0 +1,23 @@
+/* Asegura que la imagen y el formulario se ajusten correctamente en dispositivos más pequeños */
+@media (max-width: 768px) {
+  .container-fluid, .row, .col-6 {
+    height: auto;
+  }
+  .col-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Estilos personalizados para los logos en el footer del formulario */
+.footer-logos img {
+  max-width: 100px; /* Ajusta esto según el tamaño deseado para los logos */
+}
+
+.footer-logo {
+  max-width: 100px;
+}
+
+.institution-icon {
+  max-width: 150px; /* Ajusta esto a la medida deseada */
+}

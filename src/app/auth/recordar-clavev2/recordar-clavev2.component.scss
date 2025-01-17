@@ -1,0 +1,29 @@
+/* Estilos específicos para la sección de la imagen */
+.bg-image-section {
+    background: url('../../../assets/recuperar/recuperar.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  
+  /* Estilos para la sección del formulario */
+  .form-container {
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  /* Media queries para ajustar la vista en dispositivos más pequeños */
+  @media (max-width: 768px) {
+    .bg-image-section {
+      display: none; /* Oculta la sección de imagen en dispositivos pequeños */
+    }
+  }
+  
+  /* Ajustes para el logo de la institución */
+  .institution-icon {
+    max-width: 100px; /* Ajusta esto a la medida deseada */
+  }
+  
+  /* Estilos para los logos del footer */
+  .footer-logos img {
+    width: 50px; /* Ajusta esto según el tamaño deseado para los logos */
+  }
+  

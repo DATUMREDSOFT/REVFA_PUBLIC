@@ -1,0 +1,46 @@
+<div class="container mt-2">
+    
+      <div class="col-md-12">
+        <form>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="country" class="form-label text-primary">País</label>
+              <select class="form-select" id="country" [(ngModel)]="country" name="country">
+                <option value="País A">País A</option>
+                <option value="País B">País B</option>
+                <option value="País C">País C</option>
+              </select>
+            </div>
+            <div class="col-md-6 ">
+              <label for="state" class="form-label text-primary">Departamento/Estado</label>
+              <select class="form-select" id="state" [(ngModel)]="state" name="state">
+                <option value="Departamento A">Departamento A</option>
+                <option value="Departamento B">Departamento B</option>
+                <option value="Departamento C">Departamento C</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-6 ">
+              <label for="city" class="form-label text-primary">Municipio/Ciudad</label>
+              <select class="form-select" id="city" [(ngModel)]="city" name="city">
+                <option value="Ciudad A">Ciudad A</option>
+                <option value="Ciudad B">Ciudad B</option>
+                <option value="Ciudad C">Ciudad C</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="canton" class="form-label text-primary">Cantón</label>
+              <select class="form-select" id="canton" [(ngModel)]="canton" name="canton">
+                <option value="Cantón A">Cantón A</option>
+                <option value="Cantón B">Cantón B</option>
+                <option value="Cantón C">Cantón C</option>
+              </select>
+            </div>
+          </div>
+          <!-- <button type="submit" class="btn btn-primary">Enviar</button> -->
+        </form>
+      </div>
+    
+  </div>
+  

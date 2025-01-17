@@ -1,0 +1,651 @@
+<div
+  class="container animate__animated animate__slideInRight"
+  id="pagPrincipalPartidasNac"
+>
+  <div class="card">
+    <div class="card-body">
+      <h1 class="mb-3 titulo" id="tituloPartida">Partida de nacimiento</h1>
+
+      <p-steps
+        [model]="items"
+        [activeIndex]="activeIndex"
+        [readonly]="true"
+        [(activeIndex)]="activeIndex"
+      >
+        ></p-steps
+      >
+
+      <!-- inicialmente eso aparce oculto solo -->
+      <ul class="nav nav-tabs hidden" id="myTabs">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [class.active]="activeTab === 'paso1'"
+            (click)="changeTab('paso1')"
+            >1.Configuración Investigativa</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [class.active]="activeTab === 'paso2'"
+            (click)="changeTab('paso2')"
+            >2.Datos de la madre</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [class.active]="activeTab === 'paso2'"
+            (click)="changeTab('paso3')"
+            >3.Datos del padre</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [class.active]="activeTab === 'paso2'"
+            (click)="changeTab('paso4')"
+            >4.Datos de la madre</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [class.active]="activeTab === 'paso2'"
+            (click)="changeTab('paso5')"
+            >5.Datos de la madre</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [class.active]="activeTab === 'paso2'"
+            (click)="changeTab('paso6')"
+            >6.Datos de la madre</a
+          >
+        </li>
+      </ul>
+
+      <div class="tab-content mt-3 animate__animated animate__fadeIn">
+        <div
+          *ngIf="activeTab === 'paso1'"
+          class="tab-pane show active animate__animated animate__fadeIn animate__faster"
+          id="paso1"
+          role="tabpanel"
+        >
+          <app-principal class="mb-3" #PrincipalComponent></app-principal>
+        </div>
+        <div
+          *ngIf="activeTab === 'paso2'"
+          class="tab-pane show active animate__animated animate__fadeIn"
+          id="paso2"
+          role="tabpanel"
+        >
+          <app-busqueda
+            [tipoBusquedaTitulo]="'Madre'"
+            [esMadre]="true"
+            (clicEnHijo)="manejarClicEnHijo()"
+          ></app-busqueda>
+
+          <div class="accordion custom-accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button subtitulo font-weight-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Datos generales
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  <div class="container mt-2">
+                    <app-datos-generales #datosGenerales></app-datos-generales>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed subtitulo font-weight-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  LUGAR DE NACIMIENTO / ORIGINARIO DE
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <div>
+                    <app-lugar-nacimiento></app-lugar-nacimiento>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed subtitulo font-weight-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  ESTUDIOS/OCUPACIÓN ACTUAL
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <app-estudio-ocupacion></app-estudio-ocupacion>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed subtitulo font-weight-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  DIRECCIÓN ACTUAL
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <app-direccion-actual></app-direccion-actual>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed subtitulo font-weight-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive"
+                  aria-expanded="false"
+                  aria-controls="collapseFive"
+                >
+                  NúMERO DE HIJOS/AS QUE HA TENIDO
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <app-numero-hijos></app-numero-hijos>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          *ngIf="activeTab === 'paso3'"
+          class="tab-pane show active animate__animated animate__fadeIn"
+          id="paso3"
+          role="tabpanel"
+        >
+          <app-busqueda
+            [tipoBusquedaTitulo]="'Padre'"
+            [esMadre]="false"
+            (clicEnHijo)="manejarClicEnHijo()"
+          ></app-busqueda>
+
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button subtitulo font-weight-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Datos generales
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  <div class="container mt-2">
+                    <app-datos-generales></app-datos-generales>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed subtitulo font-weight-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  LUGAR DE NACIMIENTO / ORIGINARIO DE
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <div>
+                    <app-lugar-nacimiento></app-lugar-nacimiento>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed subtitulo font-weight-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  ESTUDIOS/OCUPACIÓN ACTUAL
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <app-estudio-ocupacion></app-estudio-ocupacion>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed subtitulo font-weight-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  DIRECCIÓN ACTUAL
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <app-direccion-actual></app-direccion-actual>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+
+
+
+        </div>
+
+
+
+        <!-- PASO 4 - Inscrito -->
+        <div
+          *ngIf="activeTab === 'paso4'"
+          class="tab-pane show active animate__animated animate__fadeIn animate__faster"
+          id="paso4"
+          role="tabpanel"
+        >
+          
+
+        <div class="container mt-5">
+
+          <div class="col-12 text-center">
+            <h1 class="subtitulo font-weight-bold">Datos Inscrito</h1>
+          </div>
+
+
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button subtitulo font-weight-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Datos generales
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  <div class="container mt-2">
+                    <app-datos-generales-inscrito></app-datos-generales-inscrito>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed subtitulo font-weight-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                DATOS DE PARTO
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <div>
+                    <app-datosdeparto></app-datosdeparto>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed subtitulo font-weight-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                LUGAR Y DIRECCION DE NACIMIENTO
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <app-lugar-direccion-nacimiento></app-lugar-direccion-nacimiento>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+
+
+
+
+        </div>
+
+
+
+        </div>
+
+        <!-- fin inscrito -->
+
+
+
+        <!-- DATOS INFORMANTE -->
+        <div
+        *ngIf="activeTab === 'paso5'"
+        class="tab-pane show active animate__animated animate__fadeIn animate__faster"
+        id="paso5"
+        role="tabpanel"
+      >
+      <app-busqueda
+      [tipoBusquedaTitulo]="'Informante'"
+      [esMadre]="false"
+      (clicEnHijo)="manejarClicEnHijo()"
+    ></app-busqueda>
+
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button subtitulo font-weight-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Datos generales
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show">
+          <div class="accordion-body">
+            <div class="container mt-2">
+              <app-datos-generales-informante></app-datos-generales-informante>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed subtitulo font-weight-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+          LUGAR DE NACIMIENTO / ORIGINARIA DE
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div>
+              <app-lugar-nacimineto-informante></app-lugar-nacimineto-informante>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed subtitulo font-weight-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+          DIRECCIÓN SEGÚN DUI
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <app-direccion-segun-duiinformante></app-direccion-segun-duiinformante>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+
+
+      </div>
+
+       <!-- FIN DATOS INFORMANTE -->
+
+
+       <!-- INicio guardar -->
+
+      <div
+        *ngIf="activeTab === 'paso6'"
+        class="tab-pane show active animate__animated animate__fadeIn animate__faster"
+        id="paso6"
+        role="tabpanel"
+      >
+        
+
+
+      <div class="container mt-5">
+
+        <div class="col-12 text-center">
+          <h1 class="subtitulo font-weight-bold">Guardar</h1>
+        </div>
+
+
+
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button subtitulo font-weight-bold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+              DATOS LIBRO Y OBSERVACIONES:
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                <div class="container mt-4">
+                  <app-guardar-registro-partida></app-guardar-registro-partida>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+
+         
+          
+        </div>
+
+
+
+      </div>
+
+
+
+      </div>
+
+
+
+       <!-- FIN guardar -->
+
+      <div
+        *ngIf="activeTab === 'paso7'"
+        class="tab-pane show active animate__animated animate__fadeIn animate__faster"
+        id="paso7"
+        role="tabpanel"
+      >
+
+
+
+        <h1 class="titulo">Guardar...</h1>
+
+
+        <app-finalizar-form></app-finalizar-form>
+       
+
+        <div class="container">
+
+        
+
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      </div>
+
+
+
+    </div>
+
+    <div class="container">
+      <div class="col-md-12 mt-5 mb-5">
+        <div class="d-flex justify-content-between">
+          <!-- Usamos flexbox para alinear los elementos -->
+          <div>
+            <!-- Botón izquierdo -->
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-lg"
+              (click)="anterior()"
+              *ngIf="activeIndex > 0"
+            >
+              <i class="bi bi-arrow-left"></i>
+              Regresar
+            </button>
+          </div>
+          <div>
+            <!-- Botón derecho -->
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-lg tap-top"
+              (click)="siguiente()"
+              onclick="document.getElementById('idToTop').scrollIntoView({ behavior: 'smooth' });"
+              *ngIf="activeIndex < items.length - 1"
+            >
+              
+              Continuar
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<swal
+  #testing
+  title=""
+  text="No has seleccionado todas las opciones."
+  icon="info"
+  [showCancelButton]="false"
+  [focusCancel]="true"
+  confirmButtonColor="#050e5b"
+  iconColor="#2112c9"
+  confirmButtonText="Aceptar"
+>
+</swal>
+
+<swal
+  #guardar
+  title=""
+  text="Se ha guardo con éxito"
+  icon="success"
+  [showCancelButton]="false"
+  [focusCancel]="true"
+  confirmButtonColor="#050e5b"
+  iconColor="#2112c9"
+  confirmButtonText="Aceptar"
+>
+</swal>
+
+

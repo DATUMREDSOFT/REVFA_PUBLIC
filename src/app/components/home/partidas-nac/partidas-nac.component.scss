@@ -1,0 +1,42 @@
+
+
+::ng-deep {
+    /* Aplica estilos personalizados sobre las clases de PrimeNG */
+    .p-steps .p-steps-item.p-highlight .p-steps-number {
+      background: #050e5b !important;
+      color: #ffffff !important;
+    }
+  }
+
+
+
+  .custom-accordion .accordion-item .accordion-collapse {
+    box-shadow: none; /* Quita el box-shadow predeterminado */
+  }
+  .custom-accordion .accordion-item .accordion-button:focus {
+    outline: none; /* Elimina el sombreado al hacer clic */
+    box-shadow: none; /* Elimina cualquier sombreado al hacer clic */
+  }
+
+  /* Estilos personalizados para el primer item del acordeón */
+  .custom-accordion .accordion-item:nth-child(1) .accordion-button {
+    color: #ffffff; /* Color del texto */
+    background-color: #050e5b; /* Color de fondo */
+  }
+
+  /* Estilos personalizados para el segundo item del acordeón */
+  .custom-accordion .accordion-item:nth-child(2) .accordion-button {
+    color: #dadee7; /* Color del texto */
+    background-color: #2112c9; /* Color de fondo */
+  }
+
+  /* Estilos personalizados para el tercer item del acordeón */
+  .custom-accordion .accordion-item:nth-child(3) .accordion-button {
+    color: #2112c9; /* Color del texto */
+    background-color: #687eff; /* Color de fondo */
+  }
+
+  .custom-accordion .accordion-item:nth-child(4) .accordion-button {
+    color: #050e5b; /* Color del texto */
+    background-color: #dadee7; /* Color de fondo */
+  }

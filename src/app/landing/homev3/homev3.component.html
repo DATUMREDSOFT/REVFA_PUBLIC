@@ -1,0 +1,483 @@
+
+<div class="inicioId"></div>
+
+
+<body id="page-top">
+    <!-- Navigation-->
+    
+    
+    
+    
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand my-3 " href="#">
+                <img class="sombra" src="../../../assets/logo/logoAzul.png" alt="Bootstrap"  height="40" >
+              </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menú
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a  onclick="document.getElementById('page-top').scrollIntoView({ behavior: 'smooth' });" href="javascript:void(0);" class="nav-link text-primary text-whiteHover text-center" style="font-size: 20px;"  >Inicio</a></li>
+                    <li class="nav-item"><a  onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });" href="javascript:void(0);"  class="nav-link text-primary text-whiteHover text-center"  style="font-size: 20px;" >Historia</a></li>
+                    <li class="nav-item"><a  onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });"  href="javascript:void(0);" class="nav-link text-primary text-whiteHover text-center"  style="font-size: 20px;" >Acerca de</a></li>
+               
+                
+                    <li class="nav-item dropdown d-lg-none">
+                      <a class="nav-link text-primary text-whiteHover text-center" [routerLink]="['/auth/login2']" style="font-size: 20px;">Iniciar Sesión</a>
+                  </li>
+
+
+                    <li class="nav-item dropdown d-none d-lg-block">
+                        <a class="nav-link text-primary text-whiteHover text-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 20px;">
+                          Iniciar Sesión
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="min-width: 300px; ">
+                          <li>
+
+
+
+
+                            <form [formGroup]="myForm" class="theme-form login-form" style="max-width: 400px;" >
+        
+                            <h6>¡Bienvenido de nuevo! Inicia sesión en tu cuenta.</h6>
+                            <div class="form-group">
+                              <label>Usuario</label>
+                              <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                <input
+                                  class="form-control"
+                                  [ngClass]="{'is-invalid': email?.invalid && email?.touched, 'is-valid': email?.valid && email?.touched}"
+                                  type="text"
+                                  id="email" 
+                                  name="email"
+                                  formControlName="email" 
+                                  placeholder="usuario.RNPN"
+                                  formControlName="email"
+                                  (blur)="showValidation()"
+                                  (input)="onInput()"
+                                />
+                                <div *ngIf="email?.invalid && email?.touched" class="invalid-feedback">
+                                  <div *ngIf="email?.errors?.['required']">El usuario es obligatorio.</div>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label>Contraseña</label>
+                              <div class="input-group">
+                                <span class="input-group-text"><i class="icon-lock"></i></span>
+                                <input
+                                  type="{{ mostrarClave ? 'text' : 'password' }}"
+                                  class="form-control"
+                                  [ngClass]="{'is-invalid': clave?.invalid && clave?.touched, 'is-valid': clave?.valid && clave?.touched}"
+                                  id="clave"
+                                  name="clave"              
+                                  placeholder="Ingresa tu contraseña"
+                                  required
+                                  formControlName="clave"
+                                  autocomplete="false"
+                                  (blur)="showValidationClave()"
+                                  (input)="onInputclave()"
+                                />            
+                                <button
+                                  class="btn btn-outline-primary"
+                                  type="button"
+                                  (click)="toggleMostrarContrasena()"
+                                >
+                                  <i
+                                    class="{{ mostrarClave ? 'bi bi-eye-slash' : 'bi bi-eye' }}"
+                                  ></i>
+                                </button>
+                                <div *ngIf="clave?.invalid && clave?.touched" class="invalid-feedback">
+                                  <div *ngIf="clave?.errors?.['required']">la clave es obligatoria.</div>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group text-primary">
+                              <div class="checkbox ms-1">
+                                <input id="checkbox1" type="checkbox" class="contenido" />
+                                <label for="checkbox1" class="text-primary">Recordar clave</label>
+                              </div>
+                            </div>
+
+                            <div class="form-group text-primary">
+                              <div class=" ms-1">           
+                                <a [routerLink]="['/auth/recordar-clave']"  class="text-primary">¿Olvidaste tu contraseña/usuario?</a>
+                              </div>
+                            </div>
+
+                            
+
+
+
+                            <div class="form-group">
+                              <a class="btn btn-outline-primary me-2 pt-2" [routerLink]="['/inicio/principal']">
+                                <i class="bi bi-box-arrow-in-right"></i> Acceder
+                              </a>
+                            </div>
+
+                            
+
+                            <div class="form-group text-primary text-center">
+                              <div class=" ms-1">           
+                                <a [routerLink]="['/auth/registro']"  class="text-primary">¿Aún no tienes cuenta?</a>
+                              </div>
+                            </div>
+
+
+                          </form>
+
+
+
+
+
+                          </li>
+                        </ul>
+                      </li>
+
+
+                    
+                </ul>
+
+               
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Masthead-->
+    
+
+   
+    <!-- <header class="masthead" id="inicioId2">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center hidden">
+                    <h1 class="mx-auto my-0 text-uppercase"  style="font-family:'MuseoSans', sans-serif !important; font-weight: 900 !important;">REVFA</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Registro de estados vitales y familiares.</h2>
+                    <a class="btn btn-outline-primary text-white btn-lg text-uppercase" [routerLink]="'auth/login2'" >Iniciar Sesión                       
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header> -->
+
+
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+          <!-- Columna para el formulario de inicio de sesión -->
+          <div class="col-md-6">
+          
+
+            <div class="h-100 d-flex justify-content-center align-items-center px-5">
+
+                <div >
+                  <h2 class="display-4 animation fade-in fw-bold" 
+                   style="text-shadow: 0 2px 2px #000000;"
+                  
+                  data-mdb-toggle="animation" >REVFA</h2>
+                  <h1 class="display-6  text-uppercase animation fade-in" data-mdb-toggle="animation" data-mdb-animation-start="onLoad" data-mdb-animation="fade-in" data-mdb-animation-show-on-load="false" data-mdb-animation-delay="400" style="animation-delay: 400ms; animation-duration: 500ms;">Registro de estados vitales y familiares</h1>
+                </div>
+  
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      
+           
+      
+           
+          </div>
+          <!-- Columna para el carrusel -->
+          <div class="col-md-6 d-none d-md-block px-0">
+            <div 
+              id="carouselExampleSlidesOnly"
+              class="carousel slide carousel-fade rounded-start  h-100"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner h-100 shadow-lg" style="border-bottom-left-radius: 4rem">
+      
+      
+                <div class="carousel-item ">
+                  <img
+                  src="../../../assets/carrousel/11.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                  <div class="carousel-caption d-none d-md-block bg-custom">
+                    <h5 class="text-white">Compromiso con el servicio y la satisfacción.</h5>
+                    <p class="text-white">Cada interacción es una oportunidad para generar un impacto positivo </p>
+                  </div>
+                </div>
+      
+                <div class="carousel-item">
+      
+                  <img
+                  src="../../../assets/carrousel/2.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+      
+                  
+                  <div class="carousel-caption d-none d-md-block bg-custom">
+                    <h5 class="text-white">Energía positiva en acción</h5>
+                  <p class="text-white">Creando conexiones genuinas y experiencias memorables. </p>
+                  </div>
+                </div>
+      
+                
+      
+                <div class="carousel-item active">
+                  <img
+                   src="../../../assets/carrousel/3.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                  <div class="carousel-caption d-none d-md-block bg-custom">
+                    <h5 class="text-white">Edificio emblemático RNPN</h5>
+                    <p class="text-white">Enmarca el compromiso con la protección de datos y la ciudadanía salvadoreña. </p> </div>
+                </div>
+      
+                <!-- Agrega más elementos carousel-item según sea necesario -->
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleSlidesOnly"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleSlidesOnly"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- About-->
+    <section class="about-section text-center reveal" id="about"  >
+        <div class="container px-4 px-lg-5" >
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8">
+                    <h2 data-aos="fade-up" class="text-white mb-4" style="font-size: 4em;" 
+                    >¿Qué es REVFA?</h2>
+                    <p class="text-white-50" style="font-size: 1.3em;">
+                       REVFA es el sistema de registro de hechos y actos jurídicos que implementa el marco legal vigente y garantiza la calidad de la información. REVFA automatiza y facilita las verificaciones de registro garantizando el resguardo de los datos ingresados. El uso del sistema REVFA facilita las tareas de las y los Registradores y simplifica la emisión de documentos en las alcaldías. De igual forma, el sistema REVFA se automatiza la transferencia de información hacia el RNPN y DIGESTYC de acuerdo a lo establecido por la Ley Transitoria del Registro del Estado Familiar Y de los Regímenes Patrimoniales del Matrimonio ( art. 65 B ), y la Ley Orgánica del Servicio Estadístico (art. 14, 15 y 17).
+                    </p>
+                </div>
+            </div>
+            <img class="img-fluid" src="../../../../../../assets/img/dui/centro.png" alt="..." />
+        </div>
+    </section>
+    <!-- Projects-->
+    <section data-aos="fade-up"
+    data-aos-anchor-placement="top-center" class="projects-section bg-light" id="projects">
+        <div class="container px-4 px-lg-5">
+            <!-- Featured Project Row-->
+            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="../../../assets/img/dui/2.jpeg" alt="..." /></div>
+                <div class="col-xl-4 col-lg-5">
+                    <div class="featured-text text-center text-lg-left text-primary">
+                        <h4>DUI</h4>
+                        <p class="text-black-50 mb-0">
+                            El Documento Único de identidad, es el documento oficial, suficiente y necesario para identificar fehacientemente a toda persona natural, salvadoreña, en todo acto público o privado, tanto dentro del país, como en el extranjero
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Project One Row-->
+            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                <div class="col-lg-6"><img class="img-fluid" src="../../../assets/img/dui/3.jpeg" alt="..." /></div>
+                <div class="col-lg-6">
+                    <div class="bg-primary text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">Kioscos automáticos</h4>
+                                <p class="mb-0 text-white-50">El Registro Nacional de las Personas Naturales (RNPN) ha iniciado con la instalación de Kioscos automáticos que permitirá la emisión automática del Documento Único de Identidad (DUI), gestionando la captura de datos biométricos y demográficos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Two Row-->
+            <div class="row gx-0 justify-content-center">
+                <div class="col-lg-6"><img class="img-fluid" src="../../../assets/img/dui/5.jpg" alt="..." /></div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="bg-primary text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-right">
+                                <h4 class="text-white text-capital-case" >Partida de Nacimiento </h4>
+                                <p class="mb-0 text-white-50">
+                                    Se han entregado 30,000 partidas a menores de edad quienes gozan de la automatización de solicitud del proceso.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Signup-->
+    <section class="signup-section" id="signup">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-10 col-lg-8 mx-auto text-center">
+                    <i class="bi bi-send mb-2 text-white" style="font-size: 2.5em;"></i>
+                    <h2 class="text-white mb-5">¡Suscríbete para recibir actualizaciones!</h2>
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- This form is pre-integrated with SB Forms.-->
+                    <!-- To make this form functional, sign up at-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- to get an API token!-->
+                    <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <!-- Email address input-->
+                        <div class="row input-group-newsletter">
+                            <div class="col">
+                                <input class="form-control" id="emailAddress" type="email" placeholder="Introducir la dirección de correo electrónico..." aria-label="Introducir la dirección de correo electrónico..." data-sb-validations="required,email" /></div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary btn-lg" id="submitButton" type="submit" style="height: 56.8px;">
+                                Notifícame &nbsp;
+                                <i class="bi bi-envelope"></i>
+                            </button></div>
+                        </div>
+                        <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">An email is required.</div>
+                        <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Email is not valid.</div>
+                        <!-- Submit success message-->
+                        <!---->
+                        <!-- This is what your users will see when the form-->
+                        <!-- has successfully submitted-->
+                        <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3 mt-2 text-white">
+                                <div class="fw-bolder">Form submission successful!</div>
+                                To activate this form, sign up at
+                                <br />
+                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            </div>
+                        </div>
+                        <!-- Submit error message-->
+                        <!---->
+                        <!-- This is what your users will see when there is-->
+                        <!-- an error submitting the form-->
+                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact-->
+    <section class="contact-section bg-primary">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-geo-alt-fill text-primary mb-2" style="font-size: 30px;"></i>
+                            <h4 class="text-uppercase m-0">Dirección</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50" style="font-size: 15px;">
+                                
+                                <a href="https://maps.app.goo.gl/E4ixERp3uVzbG8FZ9" target="_blank">Alameda Manuel Enrique Araujo 235, San Salvador</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-envelope text-primary mb-2" style="font-size: 30px;"></i>
+                            <h4 class="text-uppercase m-0">Correo electrónico</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50" style="font-size: 15px;"><a href="mailto:info@rnpn.gob.sv">{{'info@rnpn.gob.sv'}}</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-telephone text-primary mb-2" style="font-size: 30px;"></i>
+                            <h4 class="text-uppercase m-0">Teléfono</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-primary" style="font-size: 15px;">+(503) 2521 9300</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-whatsapp text-primary mb-2" style="font-size: 30px;"></i>
+                            <h4 class="text-uppercase m-0">WhatsApp</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-primary" style="font-size: 15px;">
+                            
+                                <a href="https://wa.me/5037800000" target="_blank">+(503) 7800 000</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="social d-flex justify-content-center">
+                <a class="mx-2" href="#!"><i class="bi bi-twitter-x" style="font-size: 25px;"></i></a>
+                <a class="mx-2" href="#!"><i class="bi bi-facebook" style="font-size: 25px;"></i></a>
+                <a class="mx-2" href="#!"><i class="bi bi-instagram" style="font-size: 25px;"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <div class="footer bg-primary small text-center text-white" style="font-size: 15px;">
+        
+      
+
+
+           
+                <div class="d-flex justify-content-center align-items-center flex-wrap p-4">
+                    <!-- Icono 1 -->
+                    <div class="mx-2  my-2">
+                      <img src="../../../assets/logos-gov/gobierno.png" alt="Icon 1" class="footer-icon" style="max-height: 150px;   filter: grayscale(100%) brightness(1000%);">
+                    </div>
+                    <!-- Icono 2 -->
+                    <div class="mx-2  my-2">
+                      <img src="../../../assets/logos-gov/logoRNPNBlanco.png" alt="Icon 2" class="footer-icon" style="max-height: 150px;">
+                    </div>
+
+                    <div class="mx-2 my-2">
+                        <div class="container px-4 px-lg-5">Gobierno de El Salvador - Derechos Reservados 2024 &copy;</div></div>
+                    </div>
+
+                </div>
+           
+
+        
+        
+        
+   
+
+    
+</body>

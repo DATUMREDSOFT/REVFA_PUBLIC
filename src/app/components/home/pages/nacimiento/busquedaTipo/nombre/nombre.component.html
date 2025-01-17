@@ -1,0 +1,211 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1 class="text-center mb-4 subtitulo">Nombre persona</h1>
+
+      <div class="row">
+        
+          <form [formGroup]="formulario" class="needs-validation" novalidate>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="primerNombre" class="text-primary"
+                  >Primer Nombre
+                  <span class="text-danger" ngbTooltip="Dato obligatorio"
+                    >*</span
+                  ></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="primerNombre"
+                  formControlName="primerNombre"
+                  name="primerNombre"
+                  [class.is-invalid]="mostrarError('primerNombre')"
+                  placeholder="Ingrese su primer nombre"
+                />
+                <div
+                  *ngIf="mostrarError('primerNombre')"
+                  class="invalid-feedback"
+                >
+                  Debes ingresar el primer nombre.
+                </div>
+              </div>
+  
+            </div>
+  
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="primerApellido" class="text-primary"
+                  >Primer Apellido
+                  <span class="text-danger" ngbTooltip="Dato obligatorio"
+                    >*</span
+                  ></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="primerApellido"
+                  formControlName="primerApellido"
+                  name="primerApellido"
+                  [class.is-invalid]="mostrarError('primerApellido')"
+                  placeholder="Ingrese su primer apellido"
+                />
+                <div
+                  *ngIf="mostrarError('primerApellido')"
+                  class="invalid-feedback"
+                >
+                  Debes ingresar el primer apellido.
+                </div>
+              </div>
+            </div>
+          </div>
+
+            
+
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="fechaNacimiento" class="text-primary"
+                  >Fecha de Nacimiento <span class="text-danger">*</span></label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="fechaNacimiento"
+                  formControlName="fechaNacimiento"
+                  name="fechaNacimiento"
+                  [class.is-invalid]="mostrarError('fechaNacimiento')"
+                  placeholder="Seleccione su fecha de nacimiento"
+                />
+                <div
+                  *ngIf="mostrarError('fechaNacimiento')"
+                  class="invalid-feedback"
+                >
+                  Debes ingresar la fecha de nacimiento.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="lugarNacimiento" class="text-primary"
+                  >Lugar de Nacimiento <span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lugarNacimiento"
+                  formControlName="lugarNacimiento"
+                  name="lugarNacimiento"
+                  [class.is-invalid]="mostrarError('lugarNacimiento')"
+                  placeholder="Ingrese su lugar de nacimiento"
+                />
+                <div
+                  *ngIf="mostrarError('lugarNacimiento')"
+                  class="invalid-feedback"
+                >
+                  Debes ingresar el lugar de nacimiento.
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+            
+
+           
+
+
+
+
+
+
+
+
+
+          </form>
+        
+
+
+
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="segundoNombre" class="text-primary"
+                  >Segundo Nombre</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="segundoNombre"
+                  formControlName="segundoNombre"
+                  name="segundoNombre"
+                  placeholder="Ingrese su segundo nombre"
+                />
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="segundoApellido" class="text-primary"
+                  >Segundo Apellido</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="segundoApellido"
+                  formControlName="segundoApellido"
+                  name="segundoApellido"
+                  placeholder="Ingrese su segundo apellido"
+                />
+              </div>
+    
+
+            </div>
+          </div>
+
+       
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="tercerNombre" class="text-primary">Tercer Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tercerNombre"
+                  formControlName="tercerNombre"
+                  name="tercerNombre"
+                  placeholder="Ingrese su tercer nombre"
+                />
+              </div>
+            </div>
+          </div>
+         
+
+
+
+
+          
+        
+
+        <div class="col-md-12">
+          <div class="text-center">
+            <button type="submit" class="btn btn-outline-primary">
+              <i class="bi bi-search"></i> Buscar
+            </button>
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+  </div>
+</div>

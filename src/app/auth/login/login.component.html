@@ -1,0 +1,154 @@
+<div class="container-fluid h-100">
+  <div class="row h-100 align-items-center justify-content-center">
+    <!-- Columna para el formulario de inicio de sesión -->
+    <div class="col-md-6 mt-1 shadow my-2">
+      <div class="text-center">
+        <img
+          src="../../../assets/logo/logo.png"
+          class="img-fluid rounded-top mt-4"
+          alt=""
+          style="height: 100px"
+        />
+      </div>
+
+      <form [formGroup]="myForm" class="theme-form login-form" style="max-width: 400px" >
+        <h4>Inicio de sesión</h4>
+        <h6>¡Bienvenido de nuevo! Inicia sesión en tu cuenta.</h6>
+        <div class="form-group">
+          <label>Usuario</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-person"></i></span>
+            <input
+              class="form-control"
+              [ngClass]="{'is-invalid': email?.invalid && email?.touched, 'is-valid': email?.valid && email?.touched}"
+              type="text"
+              id="email" 
+              name="email"
+              formControlName="email" 
+              placeholder="usuario.RNPN"
+              formControlName="email"
+              (blur)="showValidation()"
+              (input)="onInput()"
+            />
+            <div *ngIf="email?.invalid && email?.touched" class="invalid-feedback">
+              <div *ngIf="email?.errors?.['required']">El usuario es obligatorio.</div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Clave</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="icon-lock"></i></span>
+            <input
+              type="{{ mostrarClave ? 'text' : 'password' }}"
+              class="form-control"
+              [ngClass]="{'is-invalid': clave?.invalid && clave?.touched, 'is-valid': clave?.valid && clave?.touched}"
+              id="clave"
+              name="clave"              
+              placeholder="Ingresa tu contraseña"
+              required
+              formControlName="clave"
+              (blur)="showValidationClave()"
+              (input)="onInputclave()"
+            />            
+            <button
+              class="btn btn-outline-primary"
+              type="button"
+              (click)="toggleMostrarContrasena()"
+            >
+              <i
+                class="{{ mostrarClave ? 'bi bi-eye-slash' : 'bi bi-eye' }}"
+              ></i>
+            </button>
+            <div *ngIf="clave?.invalid && clave?.touched" class="invalid-feedback">
+              <div *ngIf="clave?.errors?.['required']">la clave es obligatoria.</div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="form-group text-primary">
+          <div class="checkbox ms-1">
+            <input id="checkbox1" type="checkbox" class="contenido" />
+            <label for="checkbox1" class="text-primary">Recordar clave</label>
+          </div>
+        </div>
+
+
+        <div class="form-group text-primary">
+          <div class=" ms-1">           
+            <a [routerLink]="['/auth/recordar-clave']"  class="text-primary">¿Olvidaste tu contraseña/usuario?</a>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <a class="btn btn-outline-primary me-2 pt-2" [routerLink]="['/inicio/principal']">
+            <i class="bi bi-box-arrow-in-right"></i> Acceder
+          </a>
+        </div>
+
+
+        <div class="login-social-title">
+          <h5>Contáctanos</h5>
+        </div>
+        <div class="form-group">
+          <ul class="login-social">
+            <li>
+              <a href="https://sv.linkedin.com/company/rnpn" target="_blank"
+                ><app-feather-icons [icon]="'linkedin'"></app-feather-icons
+              ></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/rnpn_sv?lang=es" target="_blank"
+                ><i class="bi bi-twitter-x"></i></a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/rnpn.sv/?locale=es_LA"
+                target="_blank"
+                ><app-feather-icons [icon]="'facebook'"></app-feather-icons
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/rnpn.sv/?hl=es" target="_blank"
+                ><app-feather-icons [icon]="'instagram'"></app-feather-icons
+              ></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="form-group text-primary text-center">
+          <div class=" ms-1">           
+            <a [routerLink]="['/auth/registro']"  class="text-primary">¿Aún no tienes cuenta?</a>
+          </div>
+        </div>
+
+
+      </form>
+
+      <div class="footer my-2">
+        <div class="text-center">
+          <div class="container">
+            <div class="row">
+              <div class="text-center">
+                <img
+                  src="../../../assets/logos-gov/gobierno.png"
+                  alt="Logo 1"
+                  class="footer-logo altura-logo mx-3"
+                />
+
+                <img
+                  src="../../../assets/logos-gov/RNPNFooter.png"
+                  alt="Logo 2"
+                  class="footer-logo mx-3"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

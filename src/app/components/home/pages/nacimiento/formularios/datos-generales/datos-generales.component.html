@@ -1,0 +1,226 @@
+<div class="row">
+  <form [formGroup]="formulario" class="needs-validation" novalidate>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="primerNombre" class="text-primary"
+            >Primer Nombre
+            <span class="text-danger" ngbTooltip="Dato obligatorio"
+              >*</span
+            ></label
+          >
+          <input
+           autofocus
+            type="text"
+            class="form-control"
+            id="primerNombre"
+            formControlName="primerNombre"
+            name="primerNombre"
+            [class.is-invalid]="mostrarError('primerNombre')"
+            placeholder="Ingrese su primer nombre"
+          />
+          <div *ngIf="mostrarError('primerNombre')" class="invalid-feedback">
+            Debes ingresar el primer nombre.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="segundoNombre" class="text-primary">Segundo Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="segundoNombre"
+            formControlName="segundoNombre"
+            name="segundoNombre"
+            placeholder="Ingrese su segundo nombre"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="tercerNombre" class="text-primary">Tercer Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="tercerNombre"
+            formControlName="tercerNombre"
+            name="tercerNombre"
+            placeholder="Ingrese su tercer nombre"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="primerApellido" class="text-primary"
+            >Primer Apellido
+            <span class="text-danger" ngbTooltip="Dato obligatorio"
+              >*</span
+            ></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="primerApellido"
+            formControlName="primerApellido"
+            name="primerApellido"
+            [class.is-invalid]="mostrarError('primerApellido')"
+            placeholder="Ingrese su primer apellido"
+          />
+          <div *ngIf="mostrarError('primerApellido')" class="invalid-feedback">
+            Debes ingresar el primer apellido.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="segundoApellido" class="text-primary"
+            >Segundo Apellido</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="segundoApellido"
+            name="segundoApellido"
+            formControlName="segundoApellido"
+            placeholder="Ingrese su segundo apellido"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="estadoFamiliar" class="text-primary"
+            >Estado Familiar
+            <span class="text-danger" ngbTooltip="Dato obligatorio"
+              >*</span
+            ></label
+          >
+          <select
+            class="form-select"
+            id="estadoFamiliar"
+            formControlName="estadoFamiliar"
+            name="estadoFamiliar"
+            [class.is-invalid]="mostrarError('estadoFamiliar')"
+          >
+            <option value="">Seleccione un estado familiar</option>
+            <option value="soltero">Soltero/a</option>
+            <option value="casado">Casado/a</option>
+            <option value="viudo">Viudo/a</option>
+            <option value="divorciado">Divorciado/a</option>
+          </select>
+          <div *ngIf="mostrarError('estadoFamiliar')" class="invalid-feedback">
+            Debes seleccionar un estado familiar.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="tipoDocumento" class="text-primary">Tipo Documento</label>
+          <select
+            class="form-control"
+            id="tipoDocumento"
+            formControlName="tipoDocumento"
+            name="tipoDocumento"
+          >
+            <option value="">Seleccione su tipo de documento</option>
+            <option value="DUI">DUI</option>
+            <option value="Pasaporte">Pasaporte</option>
+            <option value="Carné de Extranjería">Carné de Extranjería</option>
+            <!-- Agrega más opciones según los tipos de documentos salvadoreños que desees incluir -->
+          </select>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="numeroDocumento" class="text-primary"
+            >Número de Documento</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="numeroDocumento"
+            formControlName="numeroDocumento"
+            name="numeroDocumento"
+            placeholder="Ingrese su número de documento"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="nacionalidad" class="text-primary">Nacionalidad</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nacionalidad"
+            formControlName="nacionalidad"
+            name="nacionalidad"
+            placeholder="Ingrese su nacionalidad"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="profesionOficio" class="text-primary"
+            >Profesión/Oficio</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="profesionOficio"
+            formControlName="profesionOficio"
+            name="profesionOficio"
+            placeholder="Ingrese su profesión u oficio"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="date" class="text-primary">Fecha de Nacimiento</label>
+
+        <div>
+          <p-calendar
+            id="date"            
+            name="fechaNacimiento"
+            dateFormat="dd/mm/yy"
+            formControlName="fechaNacimiento"
+            inputStyleClass="form-control"
+            [readonlyInput]="true"
+            [inputStyle]="{ width: '100vh' }"
+          ></p-calendar>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="edad" class="text-primary">Edad</label>
+          <input
+            type="number"
+            class="form-control"
+            id="edad"
+            formControlName="edad"
+            name="edad"
+            placeholder="Ingrese su edad"
+            mask="099"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

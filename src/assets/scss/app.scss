@@ -1,0 +1,31 @@
+/* ---------------------
+	*** Theme Scss ***
+-----------------------*/
+$primary: #050e5b;
+$secondary: #2112c9;
+
+
+
+
+
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "style";
+@import "./fontawesome.scss";
+@import "./feather-icon.scss";
+@import "./icofont.scss";
+@import "./themify.scss";
+@import "./whether-icon.scss";
+
+
+:root {
+	/* Define tus propias variables o modifica las existentes aquí */
+	--primary-color: #050e5b; /* Por ejemplo, cambia el color primario a rojo */	
+	
+  }
+
+
+
+@import "/node_modules/primeng/resources/themes/lara-light-blue/theme.css";
+@import "/node_modules/primeng/resources/primeng.css";
+// @import "/node_modules/primeng/resources/components/calendar/calendar.css";

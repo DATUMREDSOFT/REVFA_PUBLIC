@@ -1,0 +1,81 @@
+@mixin full-height {
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .carousel-item {
+    height: 100%;
+    min-height: 100%;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.altura-logo{
+  height: 75px;
+}
+
+.ancho-logo{
+  width: 125px;
+}
+
+footer { 
+  padding: 20px 0;
+}
+/* Estilo para las imágenes del footer */
+.footer-logo {
+  max-width: 100px;
+}
+
+@include full-height;
+
+
+
+
+.bg-custom{
+  background-color: black;
+  border-radius: 10px;
+  opacity: 0.7;
+  color: white;
+ 
+
+}
+
+
+
+
+
+.recordatorios{
+
+
+font-size: 14px !important;
+ margin-bottom: 25px !important; 
+ color: #999 !important;
+
+}
+
+.recordatorios:hover{
+  color: #050e5b !important;
+}
+
+.li-hover:hover{
+
+  background-color:  #050e5b !important;
+  color: white;
+  a i {
+    color: white;
+  }
+}
+
+
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+  transition: opacity 0s 2.6s;
+}

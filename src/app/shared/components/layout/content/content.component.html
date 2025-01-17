@@ -1,0 +1,26 @@
+<div [ngClass]="layout.config.settings.layout_type" 
+[class]="layout.config.settings.layout_version" class="mt-4">
+  <div class="page-wrapper " [ngClass]="layoutClass" id="pageWrapper">
+    <div class="page-main-header" [class.close_icon]="navServices.collapseSidebar">
+      <app-header></app-header>
+    </div>
+    <div class="page-body-wrapper horizontal-menu sidebar-icon">
+      <header class="main-nav" [class.close_icon]="navServices.collapseSidebar">
+        <app-sidebar></app-sidebar>
+      </header>
+      <div class="page-body pt-5">
+
+
+        <app-migas></app-migas>
+        <!-- <app-breadcrumb></app-breadcrumb> -->
+        <router-outlet></router-outlet>
+
+
+      </div>
+      <div class="page-body"  [class.close_icon]="navServices.collapseSidebar" style="max-height: 140px !important; min-height: 140px !important; margin-top:0px !important; padding-top: 0px;">
+        <app-footer></app-footer>        
+       
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,572 @@
+<div class="card hidden">
+  <div class="card-header pb-0">
+    <h5>Default Pearls Steps</h5>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="u-pearl done col-3">
+        <span class="u-pearl-number">1</span
+        ><span class="u-pearl-title">Account Info</span>
+      </div>
+      <div class="u-pearl done col-3">
+        <span class="u-pearl-number">2</span
+        ><span class="u-pearl-title">Billing Info</span>
+      </div>
+      <div class="u-pearl current col-3">
+        <span class="u-pearl-number">3</span
+        ><span class="u-pearl-title">Confirmation</span>
+      </div>
+
+      <div class="u-pearl col-3">
+        <span class="u-pearl-number">4</span
+        ><span class="u-pearl-title">test</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- <app-migas></app-migas> -->
+
+
+<div
+  class="container-fluid animate__animated animate__fadeIn"
+  id="pagPrincipalPartidasNac"
+>
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button
+          class="accordion-button subtitulo font-weight-bold"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseOne"
+          aria-controls="collapseOne"
+          (click)="clickTipoPartida()"
+          [attr.aria-expanded]="pasoTipoPartida"
+          [ngClass]="{ collapsed: !pasoTipoPartida }"
+        >
+          SELECCIÓN TIPO DE PARTIDA: &nbsp;
+          <b class="text-primary">{{ tipoPartida }}</b>
+        </button>
+      </h2>
+      <div
+        id="collapseOne"
+        class="accordion-collapse collapse show"
+        [ngClass]="{ show: pasoTipoPartida }"
+        data-bs-parent="#accordionExample"
+      >
+        <div class="accordion-body">
+          <div class="mt-1">
+            <div class="container animate__animated animate__fadeIn">
+
+
+              <!-- <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
+                <div class="col">
+                  <button
+                    (click)="seleccionarTipoPartida('Declaración directa')"
+                    class="card card-custom text-center text-decoration-none"
+                  >
+                    <div class="card-body card-custom-body">
+                      <i class="bi bi-arrow-bar-right bi-custom"></i>
+                      <h6 class="card-title card-custom-title">
+                        Declaración directa
+                      </h6>
+                    </div>
+                  </button>
+                </div>
+                <div class="col">
+                  <button
+                    class="card card-custom text-center text-decoration-none"
+                  >
+                    <div class="card-body card-custom-body">
+                      <i class="bi bi-search bi-custom"></i>
+                      <h6 class="card-title card-custom-title">
+                        Lorem ipsum Lorem
+                      </h6>
+                    </div>
+                  </button>
+                </div>
+                <div class="col">
+                  <button
+                    class="card card-custom text-center text-decoration-none"
+                  >
+                    <div class="card-body card-custom-body">
+                      <i class="bi bi-file-text bi-custom"></i>
+                      <h6 class="card-title card-custom-title">
+                        Lorem ipsum Lorem
+                      </h6>
+                    </div>
+                  </button>
+                </div>
+                <div class="col">
+                  <button
+                    class="card card-custom text-center text-decoration-none"
+                  >
+                    <div class="card-body card-custom-body">
+                      <i class="bi bi-person bi-custom"></i>
+                      <h6 class="card-title card-custom-title">
+                        Lorem ipsum Lorem
+                      </h6>
+                    </div>
+                  </button>
+                </div>
+                <div class="col">
+                  <button
+                    class="card card-custom text-center text-decoration-none"
+                  >
+                    <div class="card-body card-custom-body">
+                      <i class="bi bi-gear bi-custom"></i>
+                      <h6 class="card-title card-custom-title">
+                        Lorem ipsum Lorem
+                      </h6>
+                    </div>
+                  </button>
+                </div>
+              </div> -->
+
+
+              
+              <div class="container-fluid py-1">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+              
+                  <div class="col">
+                    <div class="card h-100 text-center custom-color text-white " [ngClass]="{'card-custom-active' : tipoPartidaSelect == 'Declaración directa'}">
+                      <div class="card-body d-flex flex-column justify-content-center">
+                        <button class="btn p-0 test"  (click)="seleccionarTipoPartida('Declaración directa')">
+                          <i class="bi bi-arrow-bar-right" style="font-size: 2.3rem;"></i>
+                          <h5 class="card-title text-primary">Declaración directa</h5>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col">
+                    <div class="card h-100 text-center custom-color text-white">
+                      <div class="card-body d-flex flex-column justify-content-center">
+                        <button class="btn p-0 test" >
+                          <i class="bi bi-bezier2" style="font-size: 2.3rem;"></i>
+                          <h5 class="card-title">lorem itsum Lorem</h5>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col">
+                    <div class="card h-100 text-center custom-color text-white">
+                      <div class="card-body d-flex flex-column justify-content-center">
+                        <button class="btn p-0 test" >
+                          <i class="bi bi-file-text" style="font-size: 2.3rem;"></i>
+                          <h5 class="card-title">lorem itsum Lorem</h5>
+                        </button>
+                      </div>
+                    </div>
+                  </div>              
+                  
+
+                  <div class="col">
+                    <div class="card h-100 text-center custom-color text-white">
+                      <div class="card-body d-flex flex-column justify-content-center">
+                        <button class="btn p-0 test" >
+                          <i class="bi bi-backpack4" style="font-size: 2.3rem;"></i>
+                          <h5 class="card-title">lorem itsum Lorem</h5>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+              
+              
+                 
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div>
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed uppercase subtitulo"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-controls="collapseTwo"
+            [attr.aria-expanded]="pasoCatPartida"
+            (click)="clickCatPartida()"
+            [ngClass]="{ collapsed: !pasoCatPartida }"
+            [disabled]="!pasoCatPartida"
+          >
+            Categoría del informante: &nbsp;
+            <b class="text-primary">{{ categoriaInformate }}</b>
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionExample"
+          [ngClass]="{ show: pasoCatPartida, disabled: !pasoCatPartida }"
+        >
+          <div class="accordion-body">
+
+
+            <div class="mt-1">
+              <div class="container animate__animated animate__fadeIn">
+
+
+
+
+
+                <!-- <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
+                  <div class="col">
+                    <button
+                      (click)="
+                        seleccionarCatPartida(
+                          'Mayor de Edad con Documento de Identificación'
+                        )
+                      "
+                      class="card card-custom text-center text-decoration-none"
+                    >
+                      <div class="card-body card-custom-body">
+                        <i class="bi bi-person-badge bi-custom"></i>
+                        <h6 class="card-title card-custom-title">
+                          Mayor de Edad con Documento de Identificación
+                        </h6>
+                      </div>
+                    </button>
+                  </div>
+                  <div class="col">
+                    <button
+                      class="card card-custom text-center text-decoration-none"
+                    >
+                      <div class="card-body card-custom-body">
+                        <i class="bi bi-search bi-custom"></i>
+                        <h6 class="card-title card-custom-title">
+                          Lorem ipsum orem ipsum orem ipsum orem ipsum
+                        </h6>
+                      </div>
+                    </button>
+                  </div>
+                  <div class="col">
+                    <button
+                      class="card card-custom text-center text-decoration-none"
+                    >
+                      <div class="card-body card-custom-body">
+                        <i class="bi bi-file-text bi-custom"></i>
+                        <h6 class="card-title card-custom-title">
+                          Lorem ipsum orem ipsum orem ipsum orem ipsum
+                        </h6>
+                      </div>
+                    </button>
+                  </div>
+                  <div class="col">
+                    <button
+                      class="card card-custom text-center text-decoration-none"
+                    >
+                      <div class="card-body card-custom-body">
+                        <i class="bi bi-person bi-custom"></i>
+                        <h6 class="card-title card-custom-title">
+                          LLorem ipsum orem ipsum orem ipsum orem ipsum
+                        </h6>
+                      </div>
+                    </button>
+                  </div>
+                  <div class="col">
+                    <button
+                      class="card card-custom text-center text-decoration-none"
+                    >
+                      <div class="card-body card-custom-body">
+                        <i class="bi bi-gear bi-custom"></i>
+                        <h6 class="card-title card-custom-title">
+                          Lorem ipsum orem ipsum orem ipsum orem ipsum
+                        </h6>
+                      </div>
+                    </button>
+                  </div>
+                </div> -->
+
+
+
+                <div class="container-fluid py-1">
+                  <div class="row row-cols-1 row-cols-md-4 g-4">
+                
+                    <div class="col">
+                      <div class="card h-100 text-center custom-color text-white " [ngClass]="{'card-custom-active' : tipoCategoriaSelect == 'Mayor de Edad con Documento de Identificación'}">
+                        <div class="card-body d-flex flex-column justify-content-center">
+                          <button class="btn p-0 test" (click)="
+                          seleccionarCatPartida('Mayor de Edad con Documento de Identificación')">
+                            <i class="bi bi-person-badge" style="font-size: 2.3rem;"></i>
+                            <h5 class="card-title text-primary">Mayor de Edad con Documento de Identificación</h5>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                
+                    <div class="col">
+                      <div class="card h-100 text-center custom-color text-white">
+                        <div class="card-body d-flex flex-column justify-content-center">
+                          <button class="btn p-0 test" >
+                            <i class="bi bi-box-arrow-down-left" style="font-size: 2.3rem;"></i>
+                            <h5 class="card-title">Lorem ipsum orem ipsum orem ipsum orem ipsum</h5>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                
+                    <div class="col">
+                      <div class="card h-100 text-center custom-color text-white">
+                        <div class="card-body d-flex flex-column justify-content-center">
+                          <button class="btn p-0 test" >
+                            <i class="bi bi-building-add" style="font-size: 2.3rem;"></i>
+                            <h5 class="card-title">lorem itsum Lorem</h5>
+                          </button>
+                        </div>
+                      </div>
+                    </div>              
+                    
+  
+                    <div class="col">
+                      <div class="card h-100 text-center custom-color text-white">
+                        <div class="card-body d-flex flex-column justify-content-center">
+                          <button class="btn p-0 test" >
+                            <i class="bi bi-backpack4" style="font-size: 2.3rem;"></i>
+                            <h5 class="card-title">lorem itsum Lorem</h5>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                
+                
+                   
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button
+          [disabled]="!pasoDocPartida"
+          class="accordion-button collapsed uppercase subtitulo"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseThree"
+          aria-expanded="false"
+          aria-controls="collapseThree"
+          [attr.aria-expanded]="pasoDocPartida"
+          (click)="clickDocPartida()"
+          [ngClass]="{ collapsed: !pasoDocPartida }"
+        >
+          Documentación presentada: &nbsp;
+          <b class="text-primary"> {{ documentacionPresentada }}</b>
+        </button>
+      </h2>
+      <div
+        id="collapseThree"
+        class="accordion-collapse collapse"
+        data-bs-parent="#accordionExample"
+        [ngClass]="{ show: pasoDocPartida }"
+      >
+        <div class="accordion-body">
+          <div class="mt-1">
+            <div
+              class="container animate__animated animate__animated animate__fadeIn"
+            >
+
+
+
+
+              <!-- <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
+                <div class="col">
+                  <button
+                    (click)="
+                      seleccionarDocPartida('Hospital o Centro de Salud')
+                    "
+                    class="card card-custom text-center text-decoration-none"
+                  >
+                    <div class="card-body card-custom-body">
+                      <i class="bi bi-hospital bi-custom"></i>
+                      <h6 class="card-title card-custom-title">
+                        Hospital o Centro de Salud
+                      </h6>
+                    </div>
+                  </button>
+                </div>
+                <div class="col">
+                  <button
+                    class="card card-custom text-center text-decoration-none"
+                  >
+                    <div class="card-body card-custom-body">
+                      <i class="bi bi-search bi-custom"></i>
+                      <h6 class="card-title card-custom-title">
+                        Lorem ipsum orem ipsum orem ipsum orem ipsum
+                      </h6>
+                    </div>
+                  </button>
+                </div>
+                <div class="col">
+                  <button
+                    class="card card-custom text-center text-decoration-none"
+                  >
+                    <div class="card-body card-custom-body">
+                      <i class="bi bi-file-text bi-custom"></i>
+                      <h6 class="card-title card-custom-title">
+                        Lorem ipsum orem ipsum orem ipsum orem ipsum
+                      </h6>
+                    </div>
+                  </button>
+                </div>
+                <div class="col">
+                  <button
+                    class="card card-custom text-center text-decoration-none"
+                  >
+                    <div class="card-body card-custom-body">
+                      <i class="bi bi-person bi-custom"></i>
+                      <h6 class="card-title card-custom-title">
+                        LLorem ipsum orem ipsum orem ipsum orem ipsum
+                      </h6>
+                    </div>
+                  </button>
+                </div>
+                <div class="col">
+                  <button
+                    class="card card-custom text-center text-decoration-none"
+                  >
+                    <div class="card-body card-custom-body">
+                      <i class="bi bi-gear bi-custom"></i>
+                      <h6 class="card-title card-custom-title">
+                        Lorem ipsum orem ipsum orem ipsum orem ipsum
+                      </h6>
+                    </div>
+                  </button>
+                </div>
+              </div> -->
+
+
+              <div class="container-fluid py-1">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+              
+                  <div class="col">
+                    <div class="card h-100 text-center custom-color text-white " [ngClass]="{'card-custom-active' : tipoDocuSelect == 'Hospital o Centro de Salud'}">
+                      <div class="card-body d-flex flex-column justify-content-center">
+                        <button class="btn p-0 test" (click)="
+                        seleccionarDocPartida('Hospital o Centro de Salud')">
+                          <i class="bi bi-person-badge" style="font-size: 2.3rem;"></i>
+                          <h5 class="card-title text-primary">Hospital o Centro de Salud</h5>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col">
+                    <div class="card h-100 text-center custom-color text-white">
+                      <div class="card-body d-flex flex-column justify-content-center">
+                        <button class="btn p-0 test" >
+                          <i class="bi bi-box-arrow-down-left" style="font-size: 2.3rem;"></i>
+                          <h5 class="card-title">Lorem ipsum orem ipsum orem ipsum orem ipsum</h5>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col">
+                    <div class="card h-100 text-center custom-color text-white">
+                      <div class="card-body d-flex flex-column justify-content-center">
+                        <button class="btn p-0 test" >
+                          <i class="bi bi-calculator-fill" style="font-size: 2.3rem;"></i>
+                          <h5 class="card-title">Lorem ipsum orem </h5>
+                        </button>
+                      </div>
+                    </div>
+                  </div>              
+                  
+
+                  <div class="col">
+                    <div class="card h-100 text-center custom-color text-white">
+                      <div class="card-body d-flex flex-column justify-content-center">
+                        <button class="btn p-0 test" >
+                          <i class="bi bi-arrow-down-up" style="font-size: 2.3rem;"></i>
+                          <h5 class="card-title">lorem itsum Lorem</h5>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+              
+              
+                 
+                </div>
+              </div>
+
+
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- alertas -->
+
+<swal
+  #testing
+  title=""
+  text="No has seleccionado todas las opciones"
+  icon="info"
+  [showCancelButton]="true"
+  [focusCancel]="true"
+>
+</swal>
+
+<p-toast position="top-center" key="tc"></p-toast>
+
+<!-- <button (click)="showSuccess()" >Mostrar Éxito</button>
+<button (click)="showError()">Mostrar Error</button> -->
+

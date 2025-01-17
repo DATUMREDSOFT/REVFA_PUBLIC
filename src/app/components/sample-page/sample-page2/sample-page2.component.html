@@ -1,0 +1,146 @@
+<div class="container-fluid animate__animated animate__slideInRight" observeDomChange (domChanged)="onDomChange()">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h1 class="titulo">Formulario #2</h1>
+          <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+        </div>
+        <div class="card-body">
+              
+          <div class="container mt-2">
+
+
+            <ul class="nav nav-tabs" id="myTabs">
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="activeTab === 'datosGenerales'" (click)="changeTab('datosGenerales')">Datos Generales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="activeTab === 'datosEspecificos'" (click)="changeTab('datosEspecificos')">Datos Específicos</a>
+                </li>
+            </ul>
+
+            
+            <div class="tab-content mt-3 animate__animated animate__slideInRight">
+                <div *ngIf="activeTab === 'datosGenerales'" class="tab-pane fade show active animate__animated animate__slideInRight" id="datosGenerales" role="tabpanel">
+                  <form class="animate__animated animate__slideInRight" name="myForm">
+                    <div class="mb-3">
+                      <label for="cars" class="form-label">Selecciona un coche:</label>
+                      <ng-select
+                      class="custom-ng-select"
+                        [items]="cars"
+                        bindLabel="name"
+                        bindValue="id"
+                        [(ngModel)]="selectedCar"
+                       name = "selectedCar"
+                      ></ng-select>
+                    </div>
+                    
+                    <div class="mb-3">
+                      <label for="telefono" class="form-label">Teléfono</label>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="telefono"
+                        placeholder="Ingresa tu número de teléfono"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Por favor ingresa un número de teléfono válido.
+                      </div>
+                    </div>
+  
+                    <div class="mb-3">
+                      <label for="date" class="form-label">Selecciona una fecha:</label> <br>
+                      <p-calendar [(ngModel)]="date"  name = "date" [readonlyInput]="true"></p-calendar>                    
+
+
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="date2" class="form-label">Selecciona una hora AM/PM:</label> <br>   
+                      <p-calendar [(ngModel)]="date2" name = "date2" [showTime]="true" hourFormat="12" [timeOnly]="true"  [readonlyInput]="true"></p-calendar>
+
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="date" class="form-label">¿Sabe leer?:</label> <br>   
+                      <input type="checkbox" data-toggle="toggle" data-onlabel="Sí" data-offlabel="No" data-onstyle="primary" data-offstyle="secondaryx" data-width="80">
+                    </div>
+
+                    
+                    
+  
+                    <button class="btn btn-outline-primary" (click)="changeTab('datosEspecificos')">Avanzar</button>
+                  </form>
+                </div>
+                <div *ngIf="activeTab === 'datosEspecificos'" class="tab-pane fade show active animate__animated animate__slideInRight" id="datosEspecificos" role="tabpanel">
+                    
+                  
+
+                                  <!-- Botones normales -->
+                  <div class="mb-3">
+                    <button type="button" class="btn btn-primary me-2 pb-2">Primary</button>
+                    <button type="button" class="btn btn-secondary me-2 pb-2">Secondary</button>
+                    <button type="button" class="btn btn-success me-2 pb-2">Success</button>
+                    <button type="button" class="btn btn-danger me-2 pb-2">Danger</button>
+                    <button type="button" class="btn btn-warning me-2 pb-2">Warning</button>
+                    <button type="button" class="btn btn-info me-2 pb-2">Info</button>
+                    <button type="button" class="btn btn-light me-2 pb-2">Light</button>
+                    <button type="button" class="btn btn-dark me-2 pb-2">Dark</button>
+                  </div>
+
+                  <!-- Botones de contorno -->
+                  <div class="mb-3">
+                    <button type="button" class="btn btn-outline-primary me-2 pt-2 pb-2">Primary</button>
+                    <button type="button" class="btn btn-outline-secondary me-2 pt-2 pb-2">Secondary</button>
+                    <button type="button" class="btn btn-outline-success me-2 pt-2 pb-2">Success</button>
+                    <button type="button" class="btn btn-outline-danger me-2 pt-2 pb-2">Danger</button>
+                    <button type="button" class="btn btn-outline-warning me-2 pt-2 pb-2">Warning</button>
+                    <button type="button" class="btn btn-outline-info me-2 pt-2 pb-2">Info</button>
+                    <button type="button" class="btn btn-outline-light me-2 pt-2 pb-2">Light</button>
+                    <button type="button" class="btn btn-outline-dark me-2 pt-2 pb-2">Dark</button>
+                  </div>
+
+                  <!-- Botones con iconos -->
+                  <div class="mb-3">
+                    <button type="button" class="btn btn-primary me-2 pt-2"><i class="bi bi-heart"></i> Primary</button>
+                    <button type="button" class="btn btn-secondary me-2 pt-2"><i class="bi bi-star"></i> Secondary</button>
+                    <button type="button" class="btn btn-success me-2 pt-2"><i class="bi bi-check-circle"></i> Success</button>
+                    <button type="button" class="btn btn-danger me-2 pt-2"><i class="bi bi-exclamation-triangle"></i> Danger</button>
+                    <button type="button" class="btn btn-warning me-2 mt-2"><i class="bi bi-info-circle"></i> Warning</button>
+                    <button type="button" class="btn btn-info me-2 mt-2"><i class="bi bi-info"></i> Info</button>
+                    <button type="button" class="btn btn-light me-2 mt-2"><i class="bi bi-moon"></i> Light</button>
+                    <button type="button" class="btn btn-dark me-2 mt-2"><i class="bi bi-moon-fill"></i> Dark</button>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                    <div class="d-grid gap-2">
+                      <button
+                        type="button"
+                        name="btnBloc"
+                        id=""
+                        class="btn btn-primary"
+                        (click)="changeTab('datosGenerales')"
+                      >
+                        Regresar
+                      </button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        
+        
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

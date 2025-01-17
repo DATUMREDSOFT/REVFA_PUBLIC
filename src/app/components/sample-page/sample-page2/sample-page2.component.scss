@@ -1,0 +1,30 @@
+
+
+
+.btn-secondary-v2 {
+    color: #212529 !important;  /* Color de texto */
+    background-color: #6c757d !important; /* Color de fondo gris */
+    border-color: #6c757d !important; /* Color del borde */
+
+    &:hover {
+        color: #fff !important; /* Cambiar color del texto al pasar el mouse */
+        background-color: #495057 !important; /* Cambiar color de fondo al pasar el mouse */
+        border-color: #495057 !important; /* Cambiar color del borde al pasar el mouse */
+    }
+}
+
+
+
+// custom-styles.scss
+.toggle-btn-custom {
+    .toggle-group {
+      .toggle-handle {
+        background-color: #6c757d !important;
+        border-color: #6c757d !important;
+      }
+    }
+  }
+  
+  .prueba {
+    border: 1px solid blue!important;
+  }

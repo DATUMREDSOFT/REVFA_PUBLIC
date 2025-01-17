@@ -1,0 +1,20 @@
+.clock {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .digit {
+    font-size: 2rem;
+    margin: 0 0.2rem;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .digit-divider {
+    font-size: 2rem;
+    margin: 0 0.2rem;
+  }
+  
+  .changed {
+    transform: scale(1.5);
+  }
+  

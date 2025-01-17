@@ -1,0 +1,116 @@
+.card-custom {
+    background-color: transparent;
+    border: 2px solid #050e5b;
+    border-radius: 10px;
+    height: 100%;
+  }
+  .card-custom:hover {
+    border-color: #2112c9;
+  }
+  .card-custom-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .card-custom-title {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    color: #050e5b;
+  }
+  .bi-custom {
+    color: #050e5b;
+    font-size: 2rem; /* Tamaño del icono */
+    margin-bottom: 0.5rem; /* Espacio debajo del icono */
+  }
+  .bi-custom:hover {
+    color: #2112c9;
+  }
+  .row-cols-2 > * {
+    flex: 1 0 50%;
+  }
+  .row-cols-md-3 > * {
+    flex: 1 0 33.33%;
+  }
+  .row-cols-lg-6 > * {
+    flex: 1 0 16.666%;
+  }
+
+  @media (max-width: 768px) {
+    .card-custom-title {
+      font-size: 0.7rem; // Tamaño más pequeño para pantallas pequeñas
+    }
+  
+    .bi-custom {
+      font-size: 1.5rem; // Iconos más pequeños para pantallas pequeñas
+    }
+  }
+  
+
+  @media (min-width: 1200px) {
+    .card-custom {
+      // Ajustes para el tamaño de la tarjeta
+      padding: 1rem; // Aumenta el padding para dar más espacio
+    }
+  
+    .card-custom-body {
+      // Ajustes para el cuerpo de la tarjeta
+      padding: 1rem; // Aumenta el padding dentro del cuerpo de la tarjeta
+    }
+  
+    .card-custom-title {
+      font-size: 1rem; // Aumenta el tamaño del texto para mejor legibilidad
+    }
+  
+    .bi-custom {
+      font-size: 2.5rem; // Aumenta el tamaño del icono para mantener la proporción
+    }
+  }
+  
+
+
+
+
+  ::ng-deep {
+    .accordion-collapse {
+      transition: none !important;
+    }
+    .collapse {
+      transition: none !important;
+    }
+    .collapsing {
+      transition: none !important;
+    }
+  }
+
+
+
+
+  
+
+  .custom-color .bi, .custom-color .card-title {
+    color: #050e5b;
+  }
+
+  .card{
+    border: 2px solid #050e5b;
+    border-radius: 10px;
+  }
+
+  .card-custom-active{
+    border: 3px solid #2112c9;
+    border-radius: 10px;
+  }
+
+  .custom-color:hover {
+    background-color: #f8f9fa; /* Cambia el color de fondo al hacer hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Agrega una sombra al hacer hover */
+  }
+
+  .custom-color .btn {
+    width: 100%; /* Haz que el botón cubra todo el ancho de la tarjeta */
+    height: 100%; /* Haz que el botón cubra todo el alto de la tarjeta */
+    padding: 20px; /* Ajusta el relleno del botón según sea necesario */
+  }
